@@ -5,7 +5,7 @@ import {
 
 type IconProps = React.HTMLAttributes<SVGElement>
 
-export const icons = {
+export const Icons = {
   google: ({ ...props }: IconProps) => (
     <svg role="img" viewBox="0 0 24 24" {...props}>
       <path
