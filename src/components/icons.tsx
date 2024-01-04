@@ -1,6 +1,7 @@
 import {
   KeyRound,
-  AlertTriangle
+  AlertTriangle,
+  CheckCircle,
 } from "lucide-react"
 
 type IconProps = React.HTMLAttributes<SVGElement>
@@ -24,4 +25,5 @@ export const Icons = {
   ),
   keyRound: KeyRound,
   alertTriangle: AlertTriangle,
+  checkCircle: CheckCircle,
 }
