@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { icons } from "@/components/icons"
+import { Icons } from "@/components/icons"
 
 export const Social = () => {
   return (
@@ -12,7 +12,7 @@ export const Social = () => {
         variant="outline"
         onClick={() => {}}
       >
-        <icons.google className="w-5 h-5" />
+        <Icons.google className="w-5 h-5" />
       </Button>
 
       <Button
@@ -21,7 +21,7 @@ export const Social = () => {
         variant="outline"
         onClick={() => {}}
       >
-        <icons.gitHub className="w-5 h-5" />
+        <Icons.gitHub className="w-5 h-5" />
       </Button>
     </div>
   )
