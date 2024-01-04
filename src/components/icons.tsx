@@ -1,4 +1,7 @@
-import { KeyRound } from "lucide-react"
+import {
+  KeyRound,
+  AlertTriangle
+} from "lucide-react"
 
 type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -20,4 +23,5 @@ export const icons = {
     </svg>
   ),
   keyRound: KeyRound,
+  alertTriangle: AlertTriangle,
 }
