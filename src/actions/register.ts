@@ -1,6 +1,6 @@
 "use server"
 
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 import { RegisterInput, registerSchema } from "@/schemas"
 import { db } from "@/lib/db"
