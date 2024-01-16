@@ -1,15 +1,16 @@
 "use server"
 
+import { AuthError } from "next-auth"
+
 import { signIn } from "@/auth"
 import { LoginInput, loginSchema } from "@/schemas"
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
-import { AuthError } from "next-auth"
 
 export const login = async (data: LoginInput) => {
   const validateFields = loginSchema.safeParse(data)
 
   if (!validateFields.success) {
-    return { error: "Campo inválido" }
+    return { error: "Campos inválidos." }
   }
 
   const { email, password } = validateFields.data
