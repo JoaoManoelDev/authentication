@@ -37,12 +37,14 @@ export const RegisterForm = () => {
   })
 
   const onSubmit = (data: RegisterInput) => {
+    setError("")
+    setSuccess("")
+
     startTransition(async () => {
       const response = await register(data)
       if (response.error) setError(response.error)
       if (response.success) setSuccess(response.success)
     })
-
   }
 
   return (
