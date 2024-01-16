@@ -18,13 +18,11 @@ import { CardWrapper } from "@/components/auth/card-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { FormError } from "@/components/form-error"
-import { FormSuccess } from "@/components/form-success"
 
 import { login } from "@/actions/login"
 
 export const LoginForm = () => {
   const [error, setError] = useState("")
-  const [success, setSuccess] = useState("")
   const [isPending, startTransition] = useTransition()
 
   const loginForm = useForm<LoginInput>({
@@ -36,12 +34,12 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (data: LoginInput) => {
+    setError("")
+
     startTransition(async () => {
       const response = await login(data)
-      if (response.error) setError(response.error)
-      if (response.success) setSuccess(response.success)
+      if (response?.error) setError(response?.error)
     })
-
   }
 
   return (
@@ -94,7 +92,6 @@ export const LoginForm = () => {
           </div>
 
           <FormError message={error} />
-          <FormSuccess message={success} />
 
           <Button
             className="w-full"
