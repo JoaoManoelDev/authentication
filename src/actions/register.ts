@@ -10,7 +10,7 @@ export const register = async (data: RegisterInput) => {
   const validateFields = registerSchema.safeParse(data)
 
   if (!validateFields.success) {
-    return { error: "Campo inválido." }
+    return { error: "Credenciais inválidas." }
   }
 
   const { name, email, password } = validateFields.data
