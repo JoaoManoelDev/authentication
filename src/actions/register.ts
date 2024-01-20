@@ -19,7 +19,7 @@ export const register = async (data: RegisterInput) => {
 
   const userAlreadyExists = await getUserByEmail(email)
 
-  if (userAlreadyExists) return { error: "Esse Email já esta em uso." }
+  if (userAlreadyExists) return { error: "Este Email já esta em uso." }
 
   await db.user.create({
     data: {
