@@ -27,7 +27,7 @@ export const login = async (data: LoginInput) => {
         case "CredentialsSignin":
           return { error: "Email ou senha incorretos." }
         default:
-          return { error: "Algo deu errado." }
+          return { error: "Algo deu errado. Tente mais tarde." }
       }
     }
 
