@@ -19,6 +19,7 @@ import { CardWrapper } from "@/components/auth/card-wrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { FormError } from "@/components/form-error"
+import { FormSuccess } from "@/components/form-success"
 
 import { login } from "@/actions/login"
 
@@ -29,6 +30,8 @@ export const LoginForm = () => {
     : ""
 
   const [error, setError] = useState<string | undefined>("")
+  const [success, setSuccess] = useState<string | undefined>("")
+
   const [isPending, startTransition] = useTransition()
   
   const loginForm = useForm<LoginInput>({
@@ -41,10 +44,12 @@ export const LoginForm = () => {
 
   const onSubmit = (data: LoginInput) => {
     setError("")
+    setSuccess("")
 
     startTransition(async () => {
       const response = await login(data)
-      if (response?.error) setError(response?.error)
+      if (response?.error) setError(response.error)
+      if (response?.success) setSuccess(response.success)
     })
   }
 
@@ -97,6 +102,7 @@ export const LoginForm = () => {
             />
           </div>
 
+          <FormSuccess message={success} />
           <FormError message={error || urlError} />
 
           <Button
